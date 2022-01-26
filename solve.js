@@ -1,14 +1,26 @@
-const fs = require("fs")
-const [H,M] = fs.readFileSync("input.txt").toString().split(" ").map(T=>Number(T))
+const fs = require('fs')
+let input = fs.readFileSync('./input.txt').toString().split('\n')
+let [N , M] = input.shift().split(' ').map(E => E = Number(E))
+let J = input.map(E => E = Number(E))
 
+function solve(arr){
+	let maxSubArrSum = 0
+	let subArrSum = 0
 
-const setH = Math.floor((H * 60 + M - 45) /60)
-const setM = (H * 60 + M - 45) % 60
+	for(let num of arr){
 
-const set1 = (H * 60 + M - 45)
+		subArrSum += num
 
-console.log(set1)
+		if(subArrSum < 0){
+			subArrSum = 0
+		}
 
+		maxSubArrSum = Math.max(maxSubArrSum,subArrSum)
+	}
+	return maxSubArrSum
+}
+
+console.log(solve(J))
 
 
 
