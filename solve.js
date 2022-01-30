@@ -1,28 +1,28 @@
-const fs = require('fs')
-let input = fs.readFileSync('./input.txt').toString().split('\n')
-let [N , M] = input.shift().split(' ').map(E => E = Number(E))
-let J = input.map(E => E = Number(E))
+const fs = require('fs');
+const T = +fs.readFileSync('./input.txt').toString().trim()
 
-function solve(arr){
-	let maxSubArrSum = 0
-	let subArrSum = 0
+let A = 300
+let B = 60
+let C = 10
 
-	for(let num of arr){
+function solve(){   
+  if(T % A % B % C == 0){
+    
+    while(true){
+      let An = T - A 
+    }
 
-		subArrSum += num
+    let An = T-A
+    let Bn = Math.floor(T % A / B) 
+    let Cn = Math.floor(T % A % B / C)    
 
-		if(subArrSum < 0){
-			subArrSum = 0
-		}
+    return `${An} ${Bn} ${Cn}`
+  } 
 
-		maxSubArrSum = Math.max(maxSubArrSum,subArrSum)
-	}
-	return maxSubArrSum
+  else return -1
 }
 
-console.log(solve(J))
-
-
+console.log(solve())
 
 
 
