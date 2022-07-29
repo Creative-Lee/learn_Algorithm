@@ -18,11 +18,11 @@ input = +input;
 let sum = 0;
 let n1 = 0;
 let n2 = 1;
-for (let i = 1; i < input; i++) {
-  sum = n1 + n2;
+for (let i = 0; i < input - 2; i++) {
+  sum += n1 + n2;
 
   n1 = n2;
-  n2 = sum;
+  n2 = n1 + n2;
 }
 
 console.log(sum);
