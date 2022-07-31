@@ -3,6 +3,6 @@
     "nodemon": "^2.0.19"
   },
    "scripts":{
-    "start": "nodemon node solve.js"
+    "start": "nodemon solve.js"
   }
 }
