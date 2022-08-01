@@ -24,3 +24,4 @@ function solution() {
   console.log(count);
 }
 solution();
+// 27분

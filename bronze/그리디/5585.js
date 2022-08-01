@@ -2,24 +2,18 @@ const fs = require("fs");
 const file = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
 let input = fs.readFileSync(file).toString().trim();
 
-input = +input;
-
 function solution() {
   let count = 0;
-  let sum = 0;
-  let i = 1;
+  let rest = 1000 - +input;
 
-  while (sum + i < input) {
-    count++;
-    sum += i;
-    i++;
-    if (sum + i === input) {
-      count++;
+  let coins = [500, 100, 50, 10, 5, 1];
+
+  for (let coin of coins) {
+    count += Math.floor(rest / coin);
+    rest %= coin;
+    if (rest === 0) {
+      break;
     }
-  }
-  if (input === 1 || input === 2) {
-    console.log(1);
-    return;
   }
   console.log(count);
 }
