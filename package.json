@@ -3,6 +3,6 @@
     "nodemon": "^2.0.19"
   },
    "scripts":{
-    "start": "nodemon solve.js"
+    "start": "nodemon --watch ./ -e txt,js solve.js"
   }
 }

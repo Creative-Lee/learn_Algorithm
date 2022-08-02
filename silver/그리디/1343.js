@@ -17,3 +17,4 @@ function solution() {
 }
 
 solution();
+//5분
