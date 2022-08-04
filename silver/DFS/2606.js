@@ -62,3 +62,4 @@ function solution() {
 }
 
 solution();
+//30분 over
