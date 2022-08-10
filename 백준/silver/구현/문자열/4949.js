@@ -26,8 +26,4 @@ function solution() {
   console.log(answer.join("\n"));
 }
 solution();
-
-// 97 ~ 122 a-z
-// 65 ~ 90 A-Z
-// 32  ' '
-// 13 \r
+// 1시간 over
