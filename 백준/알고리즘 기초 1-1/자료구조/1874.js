@@ -31,7 +31,4 @@ function solution() {
   console.log(answer.split("").join("\n"));
 }
 solution();
-
-// PUSH 할때마다 N +1
-// target보다 작으면 push
-// target이랑 같으면 pop
+//1시간 over
