@@ -25,3 +25,4 @@ function solution() {
   console.log(answer.join(" "));
 }
 solution();
+//15분
