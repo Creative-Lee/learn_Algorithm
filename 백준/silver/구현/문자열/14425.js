@@ -18,3 +18,4 @@ function solution() {
   console.log(count);
 }
 solution();
+//15분
