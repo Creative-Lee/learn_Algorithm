@@ -1,13 +1,2 @@
-dmih
-11
-B
-B
-P x
-L
-B
-B
-B
-P y
-D
-D
-P z
+4
+3 5 2 7

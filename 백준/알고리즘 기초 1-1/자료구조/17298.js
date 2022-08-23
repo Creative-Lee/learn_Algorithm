@@ -21,3 +21,5 @@ function solution() {
   console.log(result.join(" "));
 }
 solution();
+
+//3시간
