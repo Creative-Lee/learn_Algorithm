@@ -66,3 +66,4 @@ function solution() {
   console.log(result.join(""));
 }
 solution();
+//4시간
