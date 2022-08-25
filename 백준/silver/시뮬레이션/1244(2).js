@@ -56,3 +56,4 @@ function solution() {
   console.log(result.join(""));
 }
 solution();
+// 35분
