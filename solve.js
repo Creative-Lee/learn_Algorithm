@@ -1,30 +1,23 @@
 const fs = require("fs");
 const file = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
-let [n, N, m, M] = fs.readFileSync(file).toString().trim().split("\n");
-n = +n;
-N = N.split(" ").map((e) => +e);
-m = +m;
-M = M.split(" ").map((e) => +e);
+// let [a, b] = fs.readFileSync(file).toString().trim().split(" ");
 
 function solution() {
-  N = N.sort((a, b) => a - b);
+  let arr = new Array(10000).fill(0);
+  arr = arr.map((e, idx) => idx);
 
-  const binary = (list, target, startIdx, endIdx, mid) => {
-    mid = Math.floor((startIdx + endIdx) / 2);
+  let num = [1, 3, 5, 7, 9, 20, 31, 42, 53, 64, 75, 86, 97];
 
-    if (endIdx < startIdx) {
-      return list[mid] === target ? 1 : 0;
+  for (let n of num) {
+    while (n <= 10000) {
+      let notSelf = 0;
+      let reduce = `${n}`.split("").reduce((p, c) => +p + +c, 0);
+      notSelf = reduce + n;
+      if (notSelf >= 10000) break;
+      arr[notSelf] = "";
+      n = notSelf;
     }
-    if (list[mid] > target) {
-      endIdx = mid - 1;
-    } else {
-      startIdx = mid + 1;
-    }
-
-    return binary(list, target, startIdx, endIdx, mid);
-  };
-
-  let result = M.map((e) => binary(N, e, 0, N.length - 1, 0));
-  console.log(result.join("\n"));
+  }
+  console.log(arr.join("\n"));
 }
 solution();
