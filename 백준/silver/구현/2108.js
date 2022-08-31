@@ -37,3 +37,4 @@ function solution() {
 }
 
 solution();
+//1시간
