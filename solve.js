@@ -6,11 +6,11 @@ let length = input.length;
 input = +input;
 
 function solution() {
-  let count = 0;
+  let sum = 0;
   for (let i = 1; i <= input; i *= 10) {
-    count += input - i + 1;
+    sum += input - i + 1;
   }
-  console.log(count);
+  console.log(sum);
 }
 
 solution();
