@@ -6,26 +6,40 @@ tcc = +tcc;
 tcs = tcs.map((e) => e.trim());
 
 function solution() {
-  let map = new Map();
+  let arr = new Array(tcc);
+  tcs.forEach((e, idx) => (arr[idx] = e.split("")));
 
-  for (let tc of tcs) {
-    if (!map.has(tc[0])) {
-      map.set(tc[0], 1);
-    } else {
-      map.set(tc[0], map.get(tc[0]) + 1);
+  const candyCount = () => {
+    let result = 1;
+    for (let i = 0; i < tcc; i++) {
+      let count = 1;
+      for (let j = 1; j < tcc; j++) {
+        if (arr[i][j - 1] === arr[i][j]) {
+          count++;
+        } else {
+          result = Math.max(result, count);
+          count = 1;
+        }
+
+        result = Math.max(result, count);
+      }
     }
-  }
-  let test = [...map];
-  let result = [];
-  test.forEach((arr) => {
-    if (arr[1] >= 5) result.push(arr[0]);
-  });
 
-  if (result.length) {
-    console.log(result.sort((a, b) => a.localeCompare(b)).join(""));
-  } else {
-    console.log("PREDAJA");
-  }
+    for (let i = 0; i < tcc; i++) {
+      let count = 1;
+      for (let j = 0; j < tcc - 1; j++) {
+        if (arr[j + 1][i] === arr[j][i]) {
+          count++;
+        } else {
+          result = Math.max(result, count);
+          count = 1;
+        }
+
+        result = Math.max(result, count);
+      }
+    }
+    return result;
+  };
 }
 
 solution();
