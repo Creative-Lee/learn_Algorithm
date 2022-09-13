@@ -2,7 +2,7 @@
   "dependencies": {
     "nodemon": "^2.0.19"
   },
-   "scripts":{
+  "scripts":{
     "start": "nodemon --watch ./ -e txt,js solve.js"
   }
 }
