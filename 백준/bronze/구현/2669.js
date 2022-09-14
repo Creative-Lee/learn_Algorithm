@@ -1,5 +1,4 @@
 const fs = require('fs')
-const { formatWithOptions } = require('util')
 const file = process.platform === 'linux' ? '/dev/stdin' : './input.txt'
 let input = fs
   .readFileSync(file)
