@@ -1,27 +1,20 @@
 // const fs = require('fs')
 // const file = process.platform === 'linux' ? '/dev/stdin' : './input.txt'
-// let [cash, prices] = fs.readFileSync(file).toString().trim().split('\n')
+// let input = fs.readFileSync(file).toString().trim().split('\n')
 
-// cash = +cash
-// prices = prices.split(' ').map((e) => +e)
-let input = [-2, -1, 0, 1, 1, 2]
+// input = input.map((e) => e.trim())
 
 function solution() {
-  let leftPointer = 0 // 왼쪽 끝
-  let rightPointer = input.length - 1 // 오른쪽 끝
+  let str = '비밀코드'
 
-  while (leftPointer < rightPointer) {
-    let sum = input[leftPointer] + input[rightPointer]
-    if (sum === 0) {
-      console.log([input[leftPointer], input[rightPointer]])
-      return
-    }
-    if (sum > 0) {
-      rightPointer--
-    } else {
-      leftPointer++
-    }
-  }
+  let cut1 = str.slice(0, 2)
+  let start = cut1.padEnd(4, '*') // 길이가 4가 될때까지 뒤 쪽에 '*' 을 추가
+
+  let cut2 = str.slice(2)
+  let end = cut2.padStart(4, '*') // 길이가 4가 될때까지 앞 쪽에 '*' 을 추가
+
+  console.log(start) // 비밀**
+  console.log(end) // **코드
 }
 
-solution() // [-2, 2]
+solution()
