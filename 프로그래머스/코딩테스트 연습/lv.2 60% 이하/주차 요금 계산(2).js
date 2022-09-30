@@ -1,19 +1,8 @@
-// const fs = require('fs')
-// const file = process.platform === 'linux' ? '/dev/stdin' : './input.txt'
-// let [n, target] = fs.readFileSync(file).toString().trim().split('\n')
-// n = +n
-// target = +target
-
-// function solution() {
-
-// }
-// solution()
 function solution(fees, records) {
   let [defTime, defFee, cutTime, cutTimeFee] = fees
   let parking = new Map()
   let totalParkingTimes = new Map()
   let fullTime = 23 * 60 + 59
-
   for (let record of records) {
     let [time, carNum, type] = record.split(' ')
     let [h, m] = time.split(':')
@@ -35,7 +24,7 @@ function solution(fees, records) {
         fee = defFee + Math.ceil((parkingTime - defTime) / cutTime) * cutTimeFee
       }
       totalParkingTimes.set(carNum, totalParkingTimes.get(carNum) + parkingTime || parkingTime)
-      parking.delete(carNum) // 출차
+      parking.delete(carNum)
     }
   } // 기본 처리 끝
 
@@ -67,7 +56,6 @@ function solution(fees, records) {
 // 입 출차 여러번 가능
 // 최소 1분 주차
 // 차량번호 작은 순으로 청구요금 return
-// 누적시간으로 일괄 계산
 
 // 시간은 분으로 환산해서 계산 --> 출차시간 - 입차시간 = 총 주차 시간
 // map에 번호,시각 형식으로 입차 저장
